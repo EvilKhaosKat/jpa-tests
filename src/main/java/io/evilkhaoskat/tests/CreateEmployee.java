@@ -10,8 +10,8 @@ import static io.evilkhaoskat.tests.Constants.PERSISTENCE_UNIT_NAME;
 
 public class CreateEmployee {
     public static void main(String[] args) {
-        EntityManagerFactory entityFactory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
-        EntityManager entityManager = entityFactory.createEntityManager();
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         entityManager.getTransaction().begin();
 
@@ -21,7 +21,7 @@ public class CreateEmployee {
         entityManager.getTransaction().commit();
 
         entityManager.close();
-        entityFactory.close();
+        entityManagerFactory.close();
     }
 
     private static Employee createEmployee() {

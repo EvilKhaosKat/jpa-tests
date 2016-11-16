@@ -10,8 +10,8 @@ import static io.evilkhaoskat.tests.Constants.ID_1;
 
 public class DeleteEmployee {
     public static void main(String[] args) {
-        EntityManagerFactory entityFactory = Persistence.createEntityManagerFactory(Constants.PERSISTENCE_UNIT_NAME);
-        EntityManager entityManager = entityFactory.createEntityManager();
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory(Constants.PERSISTENCE_UNIT_NAME);
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         entityManager.getTransaction().begin();
 
@@ -21,6 +21,6 @@ public class DeleteEmployee {
         entityManager.getTransaction().commit();
 
         entityManager.close();
-        entityFactory.close();
+        entityManagerFactory.close();
     }
 }
