@@ -6,9 +6,11 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import static io.evilkhaoskat.tests.Constants.PERSISTENCE_UNIT_NAME;
+
 public class CreateEmployee {
     public static void main(String[] args) {
-        EntityManagerFactory factory = Persistence.createEntityManagerFactory("Eclipselink_JPA");
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
         EntityManager entitymanager = factory.createEntityManager();
 
         entitymanager.getTransaction().begin();
@@ -25,7 +27,7 @@ public class CreateEmployee {
     private static Employee createEmployee() {
         Employee employee = new Employee();
 
-        employee.setId(1);
+        employee.setId(Constants.ID_1);
         employee.setName("Meow");
         employee.setSalary(9001);
         employee.setJobTitle("Cat");
