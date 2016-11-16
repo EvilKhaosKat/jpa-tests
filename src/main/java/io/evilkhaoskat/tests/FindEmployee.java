@@ -10,10 +10,10 @@ import static io.evilkhaoskat.tests.Constants.PERSISTENCE_UNIT_NAME;
 
 public class FindEmployee {
     public static void main(String[] args) {
-        EntityManagerFactory factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
-        EntityManager entitymanager = factory.createEntityManager();
+        EntityManagerFactory entityFactory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
+        EntityManager entityManager = entityFactory.createEntityManager();
 
-        Employee employee = entitymanager.find(Employee.class, Constants.ID_1);
+        Employee employee = entityManager.find(Employee.class, Constants.ID_1);
 
         System.out.println("employee:" + employee);
     }
